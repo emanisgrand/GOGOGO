@@ -58,7 +58,7 @@ public class Node : MonoBehaviour
             geometry.transform.localScale = Vector3.zero;
         }
     
-       // find all neighboring nodes
+        // find all neighboring nodes
         if (m_Board != null)
         {
             m_neighborNodes = FindNeighbors(m_Board.AllNodes);
@@ -88,7 +88,7 @@ public class Node : MonoBehaviour
         foreach (Vector2 dir in Board.directions)
         {
             // find a node neighbor at the current direction...
-            Node foundNeighbor = nodes.Find(n => n.Coordinate == Coordinate + dir);  
+            Node foundNeighbor = FindNeighborAt(nodes, dir);  
             
             // if there is a neighbor at this direction, add it to the list
             if (foundNeighbor != null && !nList.Contains(foundNeighbor))
@@ -100,6 +100,17 @@ public class Node : MonoBehaviour
         return nList;
     }
 
+    Node FindNeighborAt(List<Node> nodes, Vector2 dir)
+    {
+        return nodes.Find(n => n.Coordinate == Coordinate + dir);
+    }
+    // overload and pass in the found neighbor nodes from the method above. 
+    public Node FindNeighborAt(Vector2 dir)
+    {
+        return FindNeighborAt(NeighborNodes, dir);
+    }
+    
+    
     public void InitNode()
     {
         // if the node isn't active...

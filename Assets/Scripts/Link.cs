@@ -35,5 +35,4 @@ public class Link : MonoBehaviour
                 "delay", delay
             ));
     }
-    
 }

@@ -43,6 +43,8 @@ public class GraphicMover : MonoBehaviour {
             startXform.rotation = transform.rotation;
             startXform.localScale = transform.localScale;
         }
+        
+        Reset();
     }
 
     // reset the transform to starting values
@@ -51,13 +53,22 @@ public class GraphicMover : MonoBehaviour {
         switch (mode)
         {
             case GraphicMoverMode.MoveTo:
-                if (startXform!= null) transform.position = startXform.position;
+                if (startXform!= null)
+                {
+                    transform.position = startXform.position;
+                }
                 break;
             case GraphicMoverMode.MoveFrom:
-                if (endXform!=null) transform.position = endXform.position;
+                if (endXform!=null)
+                {
+                    transform.position = endXform.position;
+                }
                 break;
             case GraphicMoverMode.ScaleTo:
-                if (startXform!=null) transform.localScale = startXform.localScale;
+                if (startXform!=null)
+                {
+                    transform.localScale = startXform.localScale;
+                }
                 break;
         }
     }
@@ -86,7 +97,7 @@ public class GraphicMover : MonoBehaviour {
                 ));
                 break;
             case GraphicMoverMode.MoveFrom:
-                iTween.MoveTo(gameObject, iTween.Hash(
+                iTween.MoveFrom(gameObject, iTween.Hash(
                     "position", startXform.position,
                     "time", moveTime,
                     "delay", delay,

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="61eae898-6dac-4998-afc2-56f5ba7df900" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Example.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/iTweenExample.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hsGfi1TDrqtcMgOBwuc77GdiEX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" singleton="false" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="true" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" singleton="false" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="true" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61eae898-6dac-4998-afc2-56f5ba7df900" name="Default Changelist" comment="" />
+      <created>1600792493477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600792493477</updated>
+      <workItem from="1600792505038" duration="54000" />
+      <workItem from="1600793142064" duration="527000" />
+      <workItem from="1600793684949" duration="151000" />
+      <workItem from="1600794040753" duration="294000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3721" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600793652510">
+      <screen x="0" y="0" width="5120" height="1410" />
+    </state>
+    <state x="3721" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.5120.1410@0.0.5120.1410" timestamp="1600793652510" />
+    <state x="3947" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600792527837">
+      <screen x="0" y="0" width="5120" height="1410" />
+    </state>
+    <state x="3947" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.5120.1410@0.0.5120.1410" timestamp="1600792527837" />
+    <state x="3768" y="228" key="SettingsEditor" timestamp="1600794150460">
+      <screen x="0" y="0" width="5120" height="1410" />
+    </state>
+    <state x="3768" y="228" key="SettingsEditor/0.0.5120.1410@0.0.5120.1410" timestamp="1600794150460" />
+  </component>
+</project>

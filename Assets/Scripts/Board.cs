@@ -11,7 +11,7 @@ public class Board : MonoBehaviour {
     // four cardinal directions
     public static Vector2[] directions =
     {
-        new Vector2(spacing, 0),
+        new Vector2(spacing, 0f),
         new Vector2(-spacing, 0f),
         new Vector2(0f, spacing),
         new Vector2(0f, -spacing)
@@ -29,18 +29,26 @@ public class Board : MonoBehaviour {
     private Node m_goalNode;
     public Node GoalNode => m_goalNode;
 
+   
+
     public GameObject goalPrefab;
     public float drawGoalTime = 2f;
     public float drawGoalDelay = 2f;
     public iTween.EaseType drawGoalEaseType = iTween.EaseType.easeInOutSine;
     
-    private PlayerMover m_playerMover;
-    private bool _ismPlayerMoverNotNull;
-
-    private void Start()
-    {
-        _ismPlayerMoverNotNull = m_playerMover != null;
-    }
+    // xyz position of the captured enemy pieces
+    public List<Transform> capturePositions;
+    // index for the current empty slot in the captured pieces list
+    int m_currentCapturePosition = 0;
+        public int CurrentCapturePosition { get => m_currentCapturePosition; 
+            set => m_currentCapturePosition = value; }
+    
+    // visualizations for the capture positions
+    [SerializeField] float m_emptySize = 0.4f;
+    [SerializeField] private Color m_emptyColor = Color.blue;
+    
+    // establish a call to the PlayerMover script
+    PlayerMover m_playerMover;
 
     void Awake(){
         m_playerMover = FindObjectOfType<PlayerMover>().GetComponent<PlayerMover>();
@@ -66,11 +74,28 @@ public class Board : MonoBehaviour {
     }
 
     public Node FindPLayerNode(){
-        if (_ismPlayerMoverNotNull && !m_playerMover.isMoving)
+        if ( m_playerMover != null && !m_playerMover.isMoving)
         {
             return FindNodeAt(m_playerMover.transform.position);
         }
         return null;
+    }
+
+    public List<EnemyManager> FindEnemiesAt(Node node) {
+        
+        List<EnemyManager> foundEnemies = new List<EnemyManager>();
+        EnemyManager[] enemies = FindObjectsOfType<EnemyManager>();
+
+        foreach (var enemy in enemies) {
+            // create access to the EnemyMover component attached to each object in the enemies array
+            EnemyMover mover = GetComponent<EnemyMover>();
+            
+            // add the enemy on the passed in node to the enemies list
+            if (mover.CurrentNode == node) {
+                foundEnemies.Add(enemy);
+            }
+        }
+        return foundEnemies;
     }
 
     public void UpdatePlayerNode(){
@@ -83,6 +108,10 @@ public class Board : MonoBehaviour {
         if (m_playerNode != null)
         {
             Gizmos.DrawSphere(m_playerNode.transform.position, 0.2f);
+        }
+        Gizmos.color = m_emptyColor;
+        foreach (var empty in capturePositions) {
+            Gizmos.DrawCube(empty.position, Vector3.one * m_emptySize);      
         }
     }
 
@@ -101,9 +130,6 @@ public class Board : MonoBehaviour {
     }
 
     public void InitBoard() {
-        //m_playerNode?.InitNode();
-        if (m_playerNode != null) {
-            m_playerNode.InitNode();
-        }
+        m_playerNode?.InitNode();
     }
 }
