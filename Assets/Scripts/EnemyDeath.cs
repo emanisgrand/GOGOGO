@@ -29,10 +29,7 @@ public class EnemyDeath : MonoBehaviour {
 
    private void Awake() { m_board = FindObjectOfType<Board>().GetComponent<Board>(); }
 
-   //testing
-   private void Start() { Die(); }
-
-   // method to call the die coroutine
+  // method to call the die coroutine
    public void Die() { StartCoroutine(nameof(DieRoutine)); }
 
    IEnumerator DieRoutine() {
@@ -58,7 +55,7 @@ public class EnemyDeath : MonoBehaviour {
            // increment the current index and verify that index is a valid one.
            m_board.CurrentCapturePosition++;
            m_board.CurrentCapturePosition = Mathf.Clamp(m_board.CurrentCapturePosition, 
-               0, m_board.CurrentCapturePosition - 1);
+               0, m_board.capturePositions.Count - 1);
        }
        
    }

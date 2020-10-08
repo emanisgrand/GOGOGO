@@ -210,10 +210,12 @@ public class GameManager : MonoBehaviour {
     void PlayEnemyturn() {
         m_currentTurn = Turn.Enemy;
         
-        foreach (var enemy in m_enemies)
+        foreach (var enemy in m_enemies) 
         {
-            enemy.IsTurnComplete = false;
-            enemy.PlayTurn();
+            if (!enemy.IsDead) {
+                enemy.IsTurnComplete = false;
+                enemy.PlayTurn();
+            }
         }
     }
     
@@ -221,6 +223,7 @@ public class GameManager : MonoBehaviour {
     bool IsEnemyTurnComplete() {
         foreach (var enemy in m_enemies)
         {
+            if (enemy.IsDead) continue;
             if (!enemy.IsTurnComplete) return false;
         }
         return true;
@@ -230,7 +233,7 @@ public class GameManager : MonoBehaviour {
     public void UpdateTurn() {
         if (m_currentTurn == Turn.Player && m_player != null) 
         {
-            if (m_player.IsTurnComplete) { PlayEnemyturn(); }
+            if (m_player.IsTurnComplete && !AreAllEnemiesCaptured()) { PlayEnemyturn(); }
         } 
         else if (m_currentTurn == Turn.Enemy)
         {
@@ -239,6 +242,13 @@ public class GameManager : MonoBehaviour {
                 PlayPlayerTurn();
             }
         }
+    }
+
+    bool AreAllEnemiesCaptured() {
+        foreach (var enemy in m_enemies) {
+            if (!enemy.IsDead) return false;
+        }
+        return true;
     }
     
 }

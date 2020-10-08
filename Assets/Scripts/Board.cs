@@ -88,7 +88,7 @@ public class Board : MonoBehaviour {
 
         foreach (var enemy in enemies) {
             // create access to the EnemyMover component attached to each object in the enemies array
-            EnemyMover mover = GetComponent<EnemyMover>();
+            EnemyMover mover = enemy.GetComponent<EnemyMover>();
             
             // add the enemy on the passed in node to the enemies list
             if (mover.CurrentNode == node) {
